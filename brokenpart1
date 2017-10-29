@@ -1,0 +1,65 @@
+#variables and list
+datastring = []
+dataint = []
+#I made the loop variable 
+loop1 = True
+test = 1
+#went pretty simple for the first part just straight input into variable
+title = input('Enter a title for the data:\n')
+print('You entered: %s\n' % title)
+
+column1 = input('Enter the column 1 header:\n')
+print('You entered: %s\n' % column1)
+
+column2 = input('Enter the column 2 header:\n')
+print('You entered: %s\n' % column2)
+# I used functions so if our code dose not pass check it wont be added to a list. 
+def data (name,point):
+
+    if point == int:
+        print(name,point)
+        print('Data string: %s' % name)
+        print('Data integer: %s' % point)
+        datastring.append(name)
+        dataint.append(point) 
+    else:
+        print('Error not int')
+       
+
+def check(real_data):
+    if test == 2:# this is for testing
+    #if ',' not in real_data:  ###Cant get this to work right becasue i used split by ,
+        print('Error: No comma in string.')
+    #elif more then one comma
+    else:
+        name = real_data[0]
+        point = real_data[1]
+        data(name,point)        
+#this section needs to be done multiple times so while loop
+while loop1 is True:
+    data1 = str(input('Enter a data point (-1 to stop input):\n'))
+    if data1 == '-1':
+        break
+    else:
+        real_data = data1.split(',')
+        check(real_data)
+print(datastring)
+print(dataint)
+    
+    #FIXME: made empty lists to store in values in later however it overwrites the values each loop so need to change postition
+    #used a def instead.
+    #datastring = []
+    #dataint = []
+    #stop looping if -1
+    #if data == '-1':
+        #break
+    
+    #split everything by , and make the 2nd value an int
+    #else:
+        #datalist = data.split(',')
+        #print('Data string: %s' % datalist[0])
+        #print('Data integer: %s' % datalist[1])
+        #datastring = datastring.append(datalist[0])
+#dataint = dataint.append(int(datalist[1]))
+#print(datastring)
+###Sprint(dataint)
