@@ -1,0 +1,51 @@
+#variables and list
+datastring = []
+dataint = []
+#I made the loop variable 
+loop1 = True
+test = 1
+#went pretty simple for the first part just straight input into variable
+title = input('Enter a title for the data:\n')
+print('You entered: %s\n' % title)
+
+column1 = input('Enter the column 1 header:\n')
+print('You entered: %s\n' % column1)
+
+column2 = input('Enter the column 2 header:\n')
+print('You entered: %s\n' % column2)
+# I used functions so if our code dose not pass check it wont be added to a list. 
+def data (name,point):
+    
+    #if point == int:
+        print(name,point)
+        print('Data string: %s' % name)
+        print('Data integer: %s' % point)
+        datastring.append(name)
+        dataint.append(point) 
+    #else:
+       # print('Error not int')
+        
+def check(real_data):
+    if ',' not in real_data:  ###Cant get this to work right becasue i used split by ,
+        print('Error: No comma in string.')
+    #elif more then one comma
+    else:
+        name = real_data[0]
+        point = real_data[1]
+        data(name,point)        
+#this section needs to be done multiple times so while loop
+while loop1 is True:
+    data1 = str(input('Enter a data point (-1 to stop input):\n'))
+    real_data = data1.split(',')
+    if data1 == '-1':
+        break
+    elif data1.count(',') >= 2:
+        print('Error: Too many commas in input.\n')
+    elif ',' not in data1:
+        print('Error: No comma in string.\n')
+    else:
+         name = real_data[0]
+         point = real_data[1]
+         data(name,point) 
+print(datastring)
+print(dataint)
