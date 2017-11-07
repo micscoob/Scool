@@ -5,10 +5,10 @@ decode_key = {'@':'A','!':'B','#':'C','%':'D','^':'E','*':'F','&':'G','+':'H','=
 var = ''
 def print_menu():       
     print (30 * '-' , 'MENU' , 30 * '-')
-    print ('1. Encode a Message.')
-    print ('2. Decode The Message.')
-    print ('3. Display Encoded Message.')
-    print ('4. Exit')
+    print ('1 - Encode a Message.')
+    print ('2 - Decode The Message.')
+    print ('3 - Display Encoded Message.')
+    print ('4 - Exit')
     print (67 * '-')
     
 def encode():
