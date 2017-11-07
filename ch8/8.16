@@ -2,13 +2,13 @@ weights = []
 loop1 = 1
 Choice = 6
 
+#ask user the question 4 times
 while loop1 <= 4:
     tmp = float(input('Enter weight %d:\n' % loop1))
     weights.append(tmp)
     loop1 += 1
 
 sum_weights = sum(weights)/4
-
 max_weight = max(weights)
 
 print('Weights: %s\n' % weights)
