@@ -19,30 +19,29 @@ while True:
     if Choice == 0:
         pound = weights[0]
         kilo = pound / 2.2
-        print('Weight in pounds: %d'% pound)
-        print('Weight in kilograms: %d'%kilo)
+        print('Weight in pounds: %.2f'% pound)
+        print('Weight in kilograms: %.2f'%kilo)
         break
     elif Choice == 1:
         pound = weights[1]
         kilo = pound / 2.2
-        print('Weight in pounds: %d'% pound)
-        print('Weight in kilograms: %d'%kilo)
+        print('Weight in pounds: %.2f'% pound)
+        print('Weight in kilograms: %.2f'%kilo)
         break
     elif Choice == 2:
         pound = weights[2]
         kilo = pound / 2.2
-        print('Weight in pounds: %d'% pound)
-        print('Weight in kilograms: %d'%kilo)
+        print('Weight in pounds: %.2f'% pound)
+        print('Weight in kilograms: %.2f'%kilo)
         break
     elif Choice == 3:
         pound = weights[3]
         kilo = pound / 2.2
-        print('Weight in pounds: %d'% pound)
-        print('Weight in kilograms: %d'%kilo)
+        print('Weight in pounds: %.2f'% pound)
+        print('Weight in kilograms: %.2f'%kilo)
         break
     else:
-        Choice = int(input('Enter a list index location (1 - 4):\n')) - 1
+        Choice = int(input('Enter a list index (1 - 4):\n')) - 1
 
 weights.sort()
-weights.reverse()
-print('Sorted list:', weights)
+print('\nSorted list:', weights)
