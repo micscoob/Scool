@@ -1,47 +1,20 @@
 weights = []
 loop1 = 1
-Choice = 6
 
-#ask user the question 4 times
 while loop1 <= 4:
     tmp = float(input('Enter weight %d:\n' % loop1))
     weights.append(tmp)
     loop1 += 1
 
 sum_weights = sum(weights)/4
+
 max_weight = max(weights)
 
 print('Weights: %s\n' % weights)
 print('Average weight: %.2f'% sum_weights)
 print('Max weight: %.2f\n' % max_weight)
-
-while True:
-    if Choice == 0:
-        pound = weights[0]
-        kilo = pound / 2.2
-        print('Weight in pounds: %.2f'% pound)
-        print('Weight in kilograms: %.2f'%kilo)
-        break
-    elif Choice == 1:
-        pound = weights[1]
-        kilo = pound / 2.2
-        print('Weight in pounds: %.2f'% pound)
-        print('Weight in kilograms: %.2f'%kilo)
-        break
-    elif Choice == 2:
-        pound = weights[2]
-        kilo = pound / 2.2
-        print('Weight in pounds: %.2f'% pound)
-        print('Weight in kilograms: %.2f'%kilo)
-        break
-    elif Choice == 3:
-        pound = weights[3]
-        kilo = pound / 2.2
-        print('Weight in pounds: %.2f'% pound)
-        print('Weight in kilograms: %.2f'%kilo)
-        break
-    else:
-        Choice = int(input('Enter a list index (1 - 4):\n')) - 1
-
+Choice = int(input('Enter a list index (1 - 4):\n')) - 1
+print('Weight in pounds: %.2f' %weights[Choice])
+print('Weight in kilograms: %.2f' %(weights[Choice] / 2.2))
 weights.sort()
 print('\nSorted list:', weights)
