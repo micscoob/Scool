@@ -1,0 +1,59 @@
+jersey={}
+for i in range(1, 6):
+    jersey_number = int(input("Enter player %d's jersey number:\n" % i))
+    player_rating = int(input("Enter player %d's rating:\n" % i))
+    print()
+    jersey[jersey_number] = player_rating
+roster_list = []
+
+for i in jersey:
+    roster_list.append(i)
+
+def roster():
+
+
+    roster_list.sort()
+
+    print('ROSTER')
+    for player in roster_list:
+        print('Jersey number: %d, Rating: %d' % (player, jersey[player]))
+    else:
+        print()
+
+roster()
+
+while True:
+    print('MENU')
+    print('a - Add player')
+    print('d - Remove player')
+    print('u - Update player rating')
+    print('r - Output players above a rating')
+    print('o - Output roster')
+    print('q - Quit')
+    option = input('\nChoose an option:\n')
+
+    if option == 'o':
+        roster()
+        continue
+    if option == 'a':
+        adder = int(input("Enter a new player's jersey number:\n"))
+        jersey[adder] = int(input("Enter the player's rating:\n"))
+        roster_list.append(adder)
+    if option == 'd':
+        delplayer = int(input('Enter a jersey number:\n'))
+        del jersey[delplayer]
+        roster_list.remove(delplayer)
+    if option == 'u':
+        update = int(input('Enter a jersey number:\n'))
+        jersey[update] = int(input('Enter a new rating for player:\n'))
+    if option == 'r':
+        rating = int(input('Enter a rating:\n'))
+        print('ABOVE %d' % rating)
+        for i in jersey:
+            if jersey[i] > rating:
+                print('Jersey number: %d, Rating: %d' % (i, jersey[i]))
+        else:
+            print()
+
+    if option == 'q':
+        break
