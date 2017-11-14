@@ -11,22 +11,7 @@ username_list = []
 ######Company Email####
 company = '@mycompany.com'
 
-class Users:
-
-    def __init__(self, first, last, pay):
-        self.first = first
-        self.last = last
-        self.pay = pay
-        self.email = first + '.' + last + '@company.com'
-
-def exportUsers(filename, listname):
-    with open(filename, 'w') as filename:
-        wr = csv.writer(filename, delimiter=",", quoting=csv.QUOTE_ALL)
-        wr.writerow(listname)
-
-exportUsers('test_list_pls_ignore.csv', first_list)
-
-    for _ in range(100):
+for _ in range(100):
     first = fake.first_name()
     last = fake.last_name()
     ssn = fake.ssn()
@@ -39,4 +24,30 @@ exportUsers('test_list_pls_ignore.csv', first_list)
     email_list.append(email)
     username_list.append(username)
 
-    
+class Users:
+
+    def __init__(self, first, last, pay):
+        self.first = first
+        self.last = last
+        self.pay = pay
+        self.email = first + '.' + last + '@company.com'
+
+def exportUsers(filename):
+    with open(filename, 'w') as filename:
+        fields = [
+                "first_name",
+                "last_name",
+                "ssn_list",
+                "email_list",
+                "username_list",
+                ]
+        wr = csv.DictWriter(filename, delimiter=",", quoting=csv.QUOTE_ALL, fieldnames=fields)
+        wr.writerow({
+            "first_name": first_nam,
+            "last_name": last_nam,
+            "ssn_list": ssn_list,
+            "email_list": email_list,
+            "username_list": email_list,
+            })
+
+exportUsers('test_list_pls_ignore.csv')
