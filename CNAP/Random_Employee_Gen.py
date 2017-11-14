@@ -34,20 +34,8 @@ class Users:
 
 def exportUsers(filename):
     with open(filename, 'w') as filename:
-        fields = [
-                "first_name",
-                "last_name",
-                "ssn_list",
-                "email_list",
-                "username_list",
-                ]
-        wr = csv.DictWriter(filename, delimiter=",", quoting=csv.QUOTE_ALL, fieldnames=fields)
-        wr.writerow({
-            "first_name": first_nam,
-            "last_name": last_nam,
-            "ssn_list": ssn_list,
-            "email_list": email_list,
-            "username_list": email_list,
-            })
+        wr = csv.writer(filename, delimiter=",", quoting=csv.QUOTE_ALL)
+        wr.writerow(first_nam)
+        wr.writerow(last_nam)
 
 exportUsers('test_list_pls_ignore.csv')
