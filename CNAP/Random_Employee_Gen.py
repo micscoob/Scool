@@ -11,31 +11,18 @@ username_list = []
 ######Company Email####
 company = '@mycompany.com'
 
-for _ in range(100):
-    first = fake.first_name()
-    last = fake.last_name()
-    ssn = fake.ssn()
-    email = first + '.' + last + company
-    username = fake.user_name()
-    
-    first_nam.append(first)
-    last_nam.append(last)
-    ssn_list.append(ssn)
-    email_list.append(email)
-    username_list.append(username)
-
-class Users:
-
-    def __init__(self, first, last, pay):
-        self.first = first
-        self.last = last
-        self.pay = pay
-        self.email = first + '.' + last + '@company.com'
-
-def exportUsers(filename):
+def exportUsers(filename, listLength):
     with open(filename, 'w') as filename:
         wr = csv.writer(filename, delimiter=",", quoting=csv.QUOTE_ALL)
-        wr.writerow(first_nam)
-        wr.writerow(last_nam)
+        for i in range(listLength):
+            row = [] * listLength
+            first = fake.first_name()
+            last = fake.last_name()
+            ssn = fake.ssn()
+            email = first + '.' + last + company
+            username = fake.user_name()
 
-exportUsers('test_list_pls_ignore.csv')
+            row.append(first + ", " + last + ", " + ssn + ", " + email + ", " + username)
+            wr.writerow(row)
+
+exportUsers('test_list_pls_ignore.csv', 10)
